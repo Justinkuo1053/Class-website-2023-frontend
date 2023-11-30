@@ -44,7 +44,7 @@ const HomeComponent = () => {
         </div>
 
         <footer className="pt-3 mt-4 text-muted border-top">
-          &copy; 2023 Wilson Ren
+          &copy; Justin Kuo
         </footer>
       </div>
     </main>
