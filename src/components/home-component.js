@@ -1,7 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import myImage from "../image/9961072.jpg";
+import myImage2 from "../image/pexels-linda-ellershein-3127880.jpg";
 const HomeComponent = () => {
+  const imageStyle = {
+    maxWidth: "100%", // 最大宽度
+    maxHeight: "500px", // 最大高度
+    objectFit: "cover", // 图片适应框架
+  };
+  const secondImageStyle = {
+    maxWidth: "100%", // 最大宽度
+    maxHeight: "500px", // 复用第一张图片的样式
+    // 设置顶部间距为20像素
+  };
   return (
     <main>
       <div className="container py-4">
@@ -19,6 +30,55 @@ const HomeComponent = () => {
               </button>
             </Link>
           </div>
+        </div>
+        <div
+          id="carouselExampleControls"
+          className="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <img
+                src={myImage2}
+                className="d-block w-100"
+                style={secondImageStyle}
+                alt="Image 1"
+              />
+            </div>
+            <div className="carousel-item">
+              <img
+                src={myImage}
+                className="d-block w-100"
+                style={imageStyle}
+                alt="Image 2"
+              />
+            </div>
+            {/* 可以增加更多的輪播項目 */}
+          </div>
+          <button
+            className="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev"
+          >
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button
+            className="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="next"
+          >
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Next</span>
+          </button>
         </div>
 
         <div className="row align-items-md-stretch">
