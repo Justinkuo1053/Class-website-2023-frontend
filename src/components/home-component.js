@@ -4,14 +4,28 @@ import myImage from "../image/9961072.jpg";
 import myImage2 from "../image/pexels-linda-ellershein-3127880.jpg";
 const HomeComponent = () => {
   const imageStyle = {
-    maxWidth: "100%", // 最大宽度
-    maxHeight: "500px", // 最大高度
-    objectFit: "cover", // 图片适应框架
+    width: "100%", // 相同的寬度
+    height: "500px", // 相同的高度
+    objectFit: "cover", // 圖片适应框架
   };
+
   const secondImageStyle = {
-    maxWidth: "100%", // 最大宽度
-    maxHeight: "500px", // 复用第一张图片的样式
-    // 设置顶部间距为20像素
+    width: "100%", // 相同的寬度
+    height: "500px", // 相同的高度
+    objectFit: "cover", // 圖片适应框架
+
+    // 在小於或等於 768px 寬度的螢幕上，將高度調整為自適應
+    "@media (max-width: 768px)": {
+      height: "auto",
+    },
+  };
+
+  const studentSectionStyle = {
+    marginTop: "3rem", // 調整上邊距
+  };
+
+  const tutorSectionStyle = {
+    marginTop: "3rem", // 調整上邊距
   };
   return (
     <main>
@@ -82,7 +96,7 @@ const HomeComponent = () => {
         </div>
 
         <div className="row align-items-md-stretch">
-          <div className="col-md-6">
+          <div className="col-md-6" style={studentSectionStyle}>
             <div className="h-100 p-5 text-white bg-dark rounded-3">
               <h2>作為一個學生</h2>
               <p>
@@ -95,7 +109,7 @@ const HomeComponent = () => {
               </Link>
             </div>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6" style={tutorSectionStyle}>
             <div className="h-100 p-5 bg-light border rounded-3">
               <h2>作為一個導師</h2>
               <p>
