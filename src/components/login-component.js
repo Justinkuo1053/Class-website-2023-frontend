@@ -46,6 +46,7 @@ const LoginComponent = ({ currentUser, setCurrentUser }) => {
             type="text"
             className="form-control"
             name="email"
+            style={{ width: "50%", height: "5vh", margin: "10px 0" }}
           />
         </div>
         <br />
@@ -57,6 +58,7 @@ const LoginComponent = ({ currentUser, setCurrentUser }) => {
             className="form-control"
             name="password"
             id="password"
+            style={{ width: "50%", height: "5vh", margin: "10px 0" }}
           />
         </div>
         <br />
