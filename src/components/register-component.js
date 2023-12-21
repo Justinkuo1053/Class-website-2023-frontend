@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthService from "../services/auth.service";
+import myImage from "../image/9961072.jpg";
 
 const RegisterComponent = () => {
   const navigate = useNavigate();
@@ -35,8 +36,9 @@ const RegisterComponent = () => {
   };
 
   return (
-    <div style={{ padding: "3rem" }} className="col-md-12">
-      <div>
+    <div style={{ display: "flex", padding: "3rem" }}>
+      {/* 註冊表單 */}
+      <div style={{ flex: "1", marginRight: "2rem" }}>
         {message && <div className="alert alert-danger">{message}</div>}
         <div>
           <label htmlFor="username">用戶名稱:</label>
@@ -45,6 +47,7 @@ const RegisterComponent = () => {
             type="text"
             className="form-control"
             name="username"
+            style={{ width: "50%", height: "5vh", margin: "10px 0" }}
           />
         </div>
         <br />
@@ -55,6 +58,7 @@ const RegisterComponent = () => {
             type="text"
             className="form-control"
             name="email"
+            style={{ width: "50%", height: "5vh", margin: "10px 0" }}
           />
         </div>
         <br />
@@ -66,6 +70,7 @@ const RegisterComponent = () => {
             className="form-control"
             name="password"
             placeholder="長度至少超過6個英文或數字"
+            style={{ width: "50%", height: "5vh", margin: "10px 0" }}
           />
         </div>
         <br />
@@ -75,7 +80,8 @@ const RegisterComponent = () => {
             onChange={handleRole}
             type="text"
             className="form-control"
-            placeholder="只能填入student或是instructor這兩個選項其一"
+            placeholder="只能填入student或是instructor"
+            style={{ width: "50%", height: "5vh", margin: "10px 0" }}
             name="role"
           />
         </div>
@@ -83,6 +89,15 @@ const RegisterComponent = () => {
         <button onClick={handleRegister} className="btn btn-primary">
           <span>註冊會員</span>
         </button>
+      </div>
+
+      {/* 新增的圖片區塊 */}
+      <div style={{ flex: "1" }}>
+        <img
+          src={myImage}
+          alt="描述圖片內容"
+          style={{ width: "80%", height: "auto", marginLeft: "2rem" }}
+        />
       </div>
     </div>
   );
